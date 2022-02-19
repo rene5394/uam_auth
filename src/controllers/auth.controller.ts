@@ -25,11 +25,11 @@ export default class AuthController {
                 
                 res.status(200)
                 res.send(result)
+            } else {
+                res.status(400)
+                res.send('Bad request')
             }
-
-            res.status(400)
-            res.send('Bad request')
-        } catch (error) {            
+        } catch (error) {
             res.status(404)
             res.send(`${error}`)
         }
