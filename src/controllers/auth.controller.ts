@@ -1,4 +1,4 @@
-import { Request, Response } from 'express'
+import { NextFunction, Request, Response } from 'express'
 import { POST, route } from 'awilix-express'
 import { AuthService } from '../services/auth.service'
 import validator from 'validator'
@@ -11,7 +11,7 @@ export default class AuthController {
 
     @route('/login')
     @POST()
-    public async authenticate(req: Request, res: Response) {
+    public async authenticate(req: Request, res: Response): Promise<void> {
         try {
             const email = req.body.email
             const password = req.body.password
@@ -25,13 +25,19 @@ export default class AuthController {
                 
                 res.status(200)
                 res.send(result)
-            } else {
-                res.status(400)
-                res.send('Bad request')
+
+                return
             }
+
+            res.status(400)
+            res.send('Bad request')
+
+            return
         } catch (error) {
             res.status(404)
             res.send(`${error}`)
+            
+            return
         }
     }
 }
