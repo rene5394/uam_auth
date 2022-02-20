@@ -8,6 +8,8 @@ dotenv.config()
 
 const app: Application = express()
 
+app.disable('x-powered-by');
+
 app.use(json())
 
 app.use(cors())
