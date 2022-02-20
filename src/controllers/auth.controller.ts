@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from 'express'
+import { Request, Response } from 'express'
 import { POST, route } from 'awilix-express'
 import { AuthService } from '../services/auth.service'
 import validator from 'validator'
