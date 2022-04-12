@@ -1,4 +1,4 @@
-import { dotenv } from '../config/env'
+import { dotenv } from './config'
 import express, { Application, json } from 'express'
 import { loadControllers } from 'awilix-express'
 import loadContainer from './container'

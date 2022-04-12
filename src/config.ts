@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 
 dotenv.config({
-    path: `${__dirname}/../.env`
+    path: `${__dirname}/../config/.env`
 })
 
 export { dotenv }

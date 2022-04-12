@@ -1,9 +1,9 @@
 import { createPool } from "mysql2/promise"
 
 export default createPool({
-    host: process.env.db_mysql_host,
-    user: process.env.db_mysql_user,
-    password: process.env.db_mysql_password,
-    database: process.env.db_mysql_database,
+    host: process.env.DB_MYSQL_HOST,
+    user: process.env.DB_MYSQL_USER,
+    password: process.env.DB_MYSQL_PASSWORD,
+    database: process.env.DB_MYSQL_DATABASE,
     decimalNumbers: true
 })
