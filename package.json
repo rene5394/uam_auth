@@ -2,10 +2,12 @@
   "name": "uam_auth",
   "version": "1.0.0",
   "description": "Auth API",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "ts-node src/server.ts",
+    "start": "node dist/server.js",
     "start:dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
     "lint": "eslint src/* --fix"
   },
   "author": "Rene Torres",
@@ -19,7 +21,6 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
-    "typescript": "^4.5.2",
     "validator": "^13.7.0"
   },
   "devDependencies": {
@@ -34,6 +35,7 @@
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "eslint": "^8.3.0",
-    "ts-node-dev": "^1.1.8"
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.4"
   }
 }
